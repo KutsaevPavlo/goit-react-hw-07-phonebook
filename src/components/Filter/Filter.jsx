@@ -5,12 +5,11 @@ import { SelectFilter } from 'redux/filterSlice';
 
 export const Filter = () => {
   const filter = useSelector(getFilter);
-  // getFilter = state => state.filter;
+
   const dispatch = useDispatch();
 
   const handleChange = ({ target }) => {
     dispatch(SelectFilter(target.value));
-    //action SelectFilter from filterSlice
   };
 
   return (
