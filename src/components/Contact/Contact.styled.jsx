@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 export const StyledContacts = styled.li`
   padding-top: 5px;
-  width: 300px;
+  width: 500px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 export const StyledButton = styled.button`
