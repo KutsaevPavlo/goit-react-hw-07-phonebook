@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types';
-import { StyledContacts, StyledButton } from './Contact.styled';
+import {
+  StyledContacts,
+  StyledButton,
+  StyledName,
+  StyledNumber,
+} from './Contact.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 
@@ -7,8 +12,8 @@ export const Contact = ({ name, phone, id }) => {
   const distpach = useDispatch();
   return (
     <StyledContacts>
-      <span>{name}: </span>
-      <span>{phone} </span>
+      <StyledName>{name}: </StyledName>
+      <StyledNumber>{phone} </StyledNumber>
       <StyledButton
         onClick={() => {
           distpach(deleteContact({ id, name }));

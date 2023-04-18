@@ -2,7 +2,7 @@ import { Contact } from 'components/Contact/Contact';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { StyledContactList } from './ContactList.styled';
+import { StyledContactList, StyledContactWraper } from './ContactList.styled';
 import { useSelector } from 'react-redux';
 import { getContacts, getFilter, getIsLoading } from 'redux/selectors';
 import { fetchContacts } from '../../redux/operations';
@@ -23,12 +23,14 @@ export const ContactList = () => {
     contact.name.toLowerCase().includes(formattedFilter)
   );
   return (
-    <StyledContactList>
-      {filteredContacts.map(({ id, name, phone }) => (
-        <Contact key={id} name={name} phone={phone} id={id} />
-      ))}
+    <StyledContactWraper>
+      <StyledContactList>
+        {filteredContacts.map(({ id, name, phone }) => (
+          <Contact key={id} name={name} phone={phone} id={id} />
+        ))}
 
-      {isLoading && <ContentLoader />}
-    </StyledContactList>
+        {isLoading && <ContentLoader />}
+      </StyledContactList>
+    </StyledContactWraper>
   );
 };

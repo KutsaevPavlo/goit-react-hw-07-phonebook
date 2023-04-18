@@ -4,4 +4,7 @@ export const StyledFilter = styled.label`
   width: 500px;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 10px;
+}
+  
 `;
